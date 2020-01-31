@@ -7,24 +7,41 @@ function setup(){
     let x = random(width);
     let y = random(50, height);
     let d = 50;
-    circles[i] = new circle (x,y,d);
+    let c = new circle (x,y,d);
+    circles.push(c);
   }
 
+}
+
+function mousePressed() {
+  for (let i = circles.length - 1; i >= 0; i--) {
+    if (circles[i].contains(mouseX, mouseY)) {
+      circles.splice(i,1);
+    }
+  }
 }
 
 
 function draw() {
   background(50);
-
-  for (let circle of circles) {
-    circle.show();
-  }
-
   for (let i = 0; i < circles.length; i++) {
-
-    circles[i].show();
+    if (circles[i].contains(mouseX,mouseY)) {
+      circles[i].changeColor(255);
+    } else {
+      circles[i].changeColor(50);
+    }
+      circles[i].show();
+    }
   }
-}
+//  for (let circle of circles) {
+//    circle.show();
+//  }
+//
+//  for (let i = 0; i < circles.length; i++) {
+//
+//    circles[i].show();
+//  }
+//}
 
 class circle {
   constructor(x, y, d) {
