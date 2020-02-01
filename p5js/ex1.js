@@ -1,7 +1,7 @@
 
 
 let circles = [];
-
+let num = 1;
 var score = 100;
 
 function setup(){
@@ -24,6 +24,7 @@ function mousePressed() {
       score = score-1;
     }
   }
+
 }
 
 
@@ -52,7 +53,6 @@ function draw() {
       textAlign(CENTER);
       text('Conseguiste!', width/2, height/2);
     }
-
   }
 //  for (let circle of circles) {
 //    circle.show();
@@ -90,5 +90,9 @@ class circle {
    strokeWeight(4);
    fill(this.brightness, 125);
    ellipse(this.x, this.y, this.d);
+   noStroke();
+   fill(255);
+   textAlign(CENTER, CENTER);
+   text(num, this.x,this.y);
   }
 }
