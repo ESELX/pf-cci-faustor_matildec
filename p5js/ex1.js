@@ -32,6 +32,7 @@ function draw() {
   noStroke();
   fill(250);
   textSize(20);
+  textAlign(LEFT);
   text('Retira todos números que não são primos!', 10, 25);
   text(score, width-60 ,25);
   for (let i = 0; i < circles.length; i++) {
@@ -41,6 +42,12 @@ function draw() {
       circles[i].changeColor(50);
     }
       circles[i].show();
+    }
+
+    if(score < 1){
+      textSize(100);
+      textAlign(CENTER);
+      text('Conseguiste!', width/2, height/2);
     }
   }
 //  for (let circle of circles) {
