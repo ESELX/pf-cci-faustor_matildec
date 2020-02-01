@@ -2,7 +2,8 @@
 
 let circles = [];
 let num = 1;
-var score = 100;
+let score = 100;
+
 
 function setup(){
 
@@ -14,6 +15,7 @@ function setup(){
     let c = new circle (x,y,d);
     circles.push(c);
   }
+
 
 }
 
@@ -30,7 +32,6 @@ function mousePressed() {
 
 function draw() {
   background(50);
-  // mousePressed();
   noStroke();
   fill(250);
   textSize(20);
@@ -46,13 +47,18 @@ function draw() {
       circles[i].show();
     }
 
-    if(score < 26){
+    if(score < 25){
       noStroke();
       fill(250);
       textSize(100);
       textAlign(CENTER);
       text('Conseguiste!', width/2, height/2);
     }
+
+}
+
+
+
   }
 //  for (let circle of circles) {
 //    circle.show();
@@ -94,5 +100,8 @@ class circle {
    fill(255);
    textAlign(CENTER, CENTER);
    text(num, this.x,this.y);
+
+
   }
+
 }
