@@ -2,6 +2,7 @@
 
 let circles = [];
 
+var score = 100;
 
 function setup(){
 
@@ -20,6 +21,7 @@ function mousePressed() {
   for (let i = circles.length - 1; i >= 0; i--) {
     if (circles[i].contains(mouseX, mouseY)) {
       circles.splice(i,1);
+      score = score-1;
     }
   }
 }
@@ -31,6 +33,7 @@ function draw() {
   fill(250);
   textSize(20);
   text('Retira todos números que não são primos!', 10, 25);
+  text(score, width-60 ,25);
   for (let i = 0; i < circles.length; i++) {
     if (circles[i].contains(mouseX,mouseY)) {
       circles[i].changeColor(255);
