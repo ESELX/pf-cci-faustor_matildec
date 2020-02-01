@@ -54,12 +54,11 @@ function draw() {
       textAlign(CENTER);
       text('Conseguiste!', width/2, height/2);
     }
-
 }
 
 
 
-  }
+  
 //  for (let circle of circles) {
 //    circle.show();
 //  }
