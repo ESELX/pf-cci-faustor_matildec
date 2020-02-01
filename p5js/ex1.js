@@ -29,6 +29,7 @@ function mousePressed() {
 
 function draw() {
   background(50);
+  // mousePressed();
   noStroke();
   fill(250);
   textSize(20);
@@ -44,11 +45,14 @@ function draw() {
       circles[i].show();
     }
 
-    if(score < 1){
+    if(score < 26){
+      noStroke();
+      fill(250);
       textSize(100);
       textAlign(CENTER);
       text('Conseguiste!', width/2, height/2);
     }
+
   }
 //  for (let circle of circles) {
 //    circle.show();
