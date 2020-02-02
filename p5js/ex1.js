@@ -1,18 +1,17 @@
-
-
+//variáveis
 let circles = [];
-let num = 1;
 let score = 100;
 
 
 function setup(){
 
   createCanvas(windowWidth,windowHeight);
-  for (let i = 0; i < 100; i++) {
+  let i = 1
+  for (; i < 101; i++) {
     let x = random(width);
     let y = random(50, height);
     let d = 50;
-    let c = new circle (x,y,d);
+    let c = new circle (x,y,d,i);
     circles.push(c);
   }
 
@@ -24,7 +23,8 @@ function mousePressed() {
     if (circles[i].contains(mouseX, mouseY)) {
       circles.splice(i,1);
       score = score-1;
-    }
+      }
+
   }
 
 }
@@ -54,11 +54,14 @@ function draw() {
       textAlign(CENTER);
       text('Conseguiste!', width/2, height/2);
     }
+
+
+
 }
 
 
 
-  
+
 //  for (let circle of circles) {
 //    circle.show();
 //  }
@@ -70,11 +73,12 @@ function draw() {
 //}
 
 class circle {
-  constructor(x, y, d) {
+  constructor(x, y, d, num) {
     this.x = x;
     this.y = y;
     this.d = d;
     this.brightness = 0;
+    this.num = num;
   }
 
   changeColor(bright) {
@@ -98,9 +102,7 @@ class circle {
    noStroke();
    fill(255);
    textAlign(CENTER, CENTER);
-   text(num, this.x,this.y);
-
-
+   text(this.num, this.x,this.y);
   }
 
 }
