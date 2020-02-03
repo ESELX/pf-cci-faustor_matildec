@@ -21,11 +21,11 @@ function setup(){
 }
 
 function mousePressed() {
-  for (let i = circles.length - 1; i >= 0; i--) {
+  for (let i = 0; i <circles.length; i++) {
     if (circles[i].contains(mouseX, mouseY)) {
       let c = 0;
       while(c<primos.length){
-        if(i+1 == primos[c]){
+        if(circles[i].num == primos[c]){
           hp = true;
         }
         c++;
