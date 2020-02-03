@@ -1,6 +1,8 @@
 //variáveis
 let circles = [];
+let primos = [2,3,5,7,11,13,17,19,23,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
 let score = 100;
+let hp = false;
 
 
 function setup(){
@@ -21,6 +23,13 @@ function setup(){
 function mousePressed() {
   for (let i = circles.length - 1; i >= 0; i--) {
     if (circles[i].contains(mouseX, mouseY)) {
+      let c = 0;
+      while(c<primos.length){
+        if(i+1 == primos[c]){
+          hp = true;
+        }
+        c++;
+      }
       circles.splice(i,1);
       score = score-1;
       }
@@ -45,6 +54,14 @@ function draw() {
       circles[i].changeColor(50);
     }
       circles[i].show();
+    }
+
+    if(hp == true){
+      noStroke();
+      fill(250);
+      textSize(100);
+      textAlign(CENTER);
+      text('Perdeste', width/2, height/2);
     }
 
     if(score < 25){
