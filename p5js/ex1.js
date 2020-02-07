@@ -39,8 +39,8 @@ function draw() {
 
   text(score, width-60 ,25);
 
-  textSize(10);
-  text('© Fausto Ribeiro e Matilde Coelho, 2020', width-200, height-10);
+  // textSize(10);
+  // text('© Fausto Ribeiro e Matilde Coelho, 2020', width-200, height-10);
 
   for (let i = 0; i < circles.length; i++) {
     if (circles[i].contains(mouseX,mouseY)) {
