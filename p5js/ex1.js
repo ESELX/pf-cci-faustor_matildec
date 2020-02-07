@@ -35,7 +35,7 @@ function draw() {
   fill(250);
   textSize(20);
   textAlign(LEFT);
-  text('Retira os números compósitos', 10, 25);
+  text('Retira os números que não são primos', 10, 25);
 
   text(score, width-60 ,25);
 
