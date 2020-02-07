@@ -53,7 +53,7 @@ function draw() {
   }
 
     if(score < 1){
-      background('rgba(255,0,0, 0.25)');
+      background('rgba(0,255,0, 0.25)');
       noStroke();
       fill(250);
       textSize(100);
