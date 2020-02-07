@@ -35,7 +35,7 @@ function draw() {
   fill(250);
   textSize(20);
   textAlign(LEFT);
-  text('Retira os números que não são primos', 10, 25);
+  text('Retira os números compostos', 10, 25);
 
   text(score, width-60 ,25);
 
@@ -53,13 +53,18 @@ function draw() {
   }
 
     if(score < 1){
-      background(0,random(150,255),0);
+      background('rgba(random(150,255),0,0, 0.25)');
       noStroke();
       fill(250);
       textSize(100);
       textAlign(CENTER);
       text('Conseguiste!', width/2, height/2);
-      text('Conheces os números primos', width/2, height/2+75);
+      textSize(40);
+      text('Conheces os números primos!', width/2, height/2+75);
+      textSize(25);
+      text('Eles são', width/2, height/2+120);
+      textSize(20);
+      text('2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97', width/2, height/2+160);
       noLoop();
     }
 
